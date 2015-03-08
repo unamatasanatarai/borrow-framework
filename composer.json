@@ -9,12 +9,6 @@
 		"monolog/monolog": "1.12.*@dev",
 		"unamatasanatarai/regexrouter": "dev-master"
 	},
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/unamatasanatarai/regexrouter"
-		}
-	],
 	"autoload": {
 		"psr-4": {
 			"Borrow\\": "src/Borrow"
