@@ -14,7 +14,7 @@
 			"Borrow\\": "src/Borrow"
 		},
 		"classmap": [
-			"Util"
+			"src/Borrow/Util"
 		]
 	}
 }
