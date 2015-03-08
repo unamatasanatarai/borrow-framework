@@ -17,7 +17,7 @@
 			"Borrow\\": "src/Borrow"
 		},
 		"classmap": [
-			"src/Borrow/Util"
+			"src/Borrow"
 		],
         "files": [
             "src/Borrow/functions.php"
