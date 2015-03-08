@@ -10,8 +10,8 @@
 	},
 	"repositories": [
 		{
-			"type": "vcs",
-			"url": "https://github.com/unamatasanatarai/regexrouter"
+			"type": "git",
+			"url": "https://github.com/unamatasanatarai/regexrouter.git"
 		}
 	],
 	"autoload": {
