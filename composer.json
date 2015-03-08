@@ -6,8 +6,10 @@
 	"license": "MIT",
 	"minimum-stability": "dev",
 	"require": {
+		"ircmaxell/password-compat": "dev-master",
 		"monolog/monolog": "1.12.*@dev",
-		"unamatasanatarai/regexrouter": "dev-master"
+		"unamatasanatarai/regexrouter": "dev-master",
+		"filp/whoops": "1.2.*@dev"
 	},
 	"autoload": {
 		"psr-4": {
