@@ -1,0 +1,22 @@
+{
+	"name": "borrow/framework",
+	"description": "The Borrow Framework",
+	"homepage": "https://github.com/unamatasanatarai/borrow-framework",
+	"type": "library",
+	"license": "MIT",
+	"require": {
+		"monolog/monolog": "1.12.*@dev",
+		"unamatasanatarai/regexrouter": "dev-master"
+	},
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/unamatasanatarai/regexrouter"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Borrow\\": "src/Borrow"
+		}
+	}
+}
