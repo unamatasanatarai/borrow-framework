@@ -4,6 +4,7 @@
 	"homepage": "https://github.com/unamatasanatarai/borrow-framework",
 	"type": "library",
 	"license": "MIT",
+	"minimum-stability": "dev",
 	"require": {
 		"monolog/monolog": "1.12.*@dev",
 		"unamatasanatarai/regexrouter": "dev-master"
