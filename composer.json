@@ -2,7 +2,7 @@
 	"name": "borrow/framework",
 	"description": "The Borrow Framework",
 	"homepage": "https://github.com/unamatasanatarai/borrow-framework",
-	"type": "library",
+	"type": "framework",
 	"license": "MIT",
 	"require": {
         "vlucas/phpdotenv": "~1.1",
