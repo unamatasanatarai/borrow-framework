@@ -6,14 +6,22 @@ class Dispatcher{
 
     public function __construct()
     {
+        \Dotenv::load(ROOT);
+        \Log::start(STORAGE . 'logs/');
+
+        define('STORAGE', ROOT . 'storage/');
+        define('VIEWS', ROOT . 'app/resources/views/');
+        define('PUBLIC', ROOT . 'public/');
+
         $this->_dispatcher = \FastRoute\cachedDispatcher(
             function (\FastRoute\RouteCollector $r) {
                 require_once APP . 'config/routes.php';
             }, [
-                'cacheFile' => STORAGE . 'cache/routes.cache',
-                'cacheDisabled' => true
+                'cacheFile'     => STORAGE . 'cache/routes.cache',
+                'cacheDisabled' => getenv('APP_DEBUG')
             ]
         );
+
     }
 
     public function dispatch()
