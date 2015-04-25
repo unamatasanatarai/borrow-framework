@@ -8,8 +8,6 @@
         "vlucas/phpdotenv": "~1.1",
         "monolog/monolog": "~1.13",
         "filp/whoops": "1.2.*@dev"
-    },
-    "require-dev": {
         "nikic/fast-route": "dev-master",
 		"ircmaxell/password-compat": "dev-master",
         "unamatasanatarai/phputils": "dev-master"
