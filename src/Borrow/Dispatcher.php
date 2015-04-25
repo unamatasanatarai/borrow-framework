@@ -2,11 +2,10 @@
 namespace Borrow;
 
 class Dispatcher{
-    protected $_dispatcher;
 
-    public function __construct()
+    static public function dispatch()
     {
-        $this->_dispatcher = \FastRoute\cachedDispatcher(
+        $dispatcher = \FastRoute\cachedDispatcher(
             function (\FastRoute\RouteCollector $r) {
                 require_once ROOT . 'app/config/routes.php';
             }, [
@@ -14,12 +13,7 @@ class Dispatcher{
                 'cacheDisabled' => getenv('APP_DEBUG')
             ]
         );
-
-    }
-
-    public function dispatch()
-    {
-        $routeInfo = $this->_dispatcher->dispatch(
+        $routeInfo = $dispatcher->dispatch(
             $_SERVER['REQUEST_METHOD'],
             parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
         );

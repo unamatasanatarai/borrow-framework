@@ -3,7 +3,6 @@ namespace Borrow;
 
 
 class App{
-    protected $_dispatcher;
 
     public function __construct()
     {
@@ -14,12 +13,44 @@ class App{
         \Dotenv::load(ROOT);
         \Log::start(STORAGE . 'logs/');
 
-        $this->_dispatcher = new Dispatcher();
+        $this->errorReporting();
+    }
 
+    public function errorReporting()
+    {
+        $whoops = new \Whoops\Run;
+
+        if (getenv('APP_DEBUG') === 'true') {
+            ini_set('display_errors', 'On');
+            if (CLI){
+                $whoops->pushHandler(new \Whoops\Handler\PlainTextHandler());
+            }else{
+                $handler = new \Whoops\Handler\JsonResponseHandler();
+                $handler->onlyForAjaxRequests(true);
+                $whoops->pushHandler($handler);
+                $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+            }
+        }
+        else {
+            ini_set('display_errors', 'Off');
+            $whoops->pushHandler(function ($exception){
+                http_response_code(500);
+                exit('A website error has occurred.
+                    Our geniuses have been notified of this issue. Come back soon, we will fix it, we promise.');
+            });
+        }
+
+        $whoops->pushHandler(function($exception, $inspector, $run){
+            \Log::error(\Whoops\Exception\Formatter::formatExceptionPlain(
+                $inspector
+            ));
+            return \Whoops\Handler\Handler::DONE;
+        });
+        $whoops->register();
     }
 
     public function start()
     {
-        $this->_dispatcher->dispatch();
+        Dispatcher::dispatch();
     }
 }
