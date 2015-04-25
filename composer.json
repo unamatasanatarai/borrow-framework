@@ -14,7 +14,10 @@
 	"autoload": {
 		"psr-4": {
 			"Borrow\\": "src/Borrow"
-		}
+		},
+        "classmap":[
+            "src/Borrow/"
+        ]
 	},
     "minimum-stability": "dev"
 }
