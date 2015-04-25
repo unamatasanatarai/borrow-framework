@@ -9,15 +9,8 @@
         "monolog/monolog": "~1.13",
         "filp/whoops": "1.2.*@dev",
         "nikic/fast-route": "dev-master",
-		"ircmaxell/password-compat": "dev-master",
-        "unamatasanatarai/phputils": "dev-master"
+		"ircmaxell/password-compat": "dev-master"
 	},
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/unamatasanatarai/phputils"
-        }
-    ],
 	"autoload": {
 		"psr-4": {
 			"Borrow\\": "src/Borrow"
