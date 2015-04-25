@@ -22,6 +22,7 @@ class Dispatcher{
             $_SERVER['REQUEST_METHOD'],
             parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
         );
+
         switch ($routeInfo[0]) {
             case \FastRoute\Dispatcher::NOT_FOUND:
                 http_response_code(404);
