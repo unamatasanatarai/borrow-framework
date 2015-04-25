@@ -9,7 +9,8 @@
         "monolog/monolog": "~1.13",
         "filp/whoops": "1.2.*@dev",
         "nikic/fast-route": "dev-master",
-		"ircmaxell/password-compat": "dev-master"
+		"ircmaxell/password-compat": "dev-master",
+        "gabordemooij/redbean": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
