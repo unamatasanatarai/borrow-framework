@@ -21,12 +21,12 @@ class Dispatcher{
         switch ($routeInfo[0]) {
             case \FastRoute\Dispatcher::NOT_FOUND:
                 http_response_code(404);
-                throw new Exception('Not Found', 1);
+                throw new \Exception('Not Found', 1);
                 break;
             case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
                 $allowedMethods = $routeInfo[1];
                 http_response_code(405);
-                throw new Exception('Method Not Allowed', 1);
+                throw new \Exception('Method Not Allowed', 1);
                 break;
             case \FastRoute\Dispatcher::FOUND:
                 $handler = $routeInfo[1];
